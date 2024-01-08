@@ -1,0 +1,19 @@
+class Solution(object):
+    def minOperations(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        x=0
+        c=0
+        for i in nums:
+            x=x^i
+        v=k^x
+        while v>0:
+            if(v)&1==1:
+                c+=1
+            v=v>>1
+        return c
+            
+        
