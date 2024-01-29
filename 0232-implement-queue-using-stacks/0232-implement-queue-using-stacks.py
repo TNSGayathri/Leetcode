@@ -8,10 +8,9 @@ class MyQueue:
         self.d.append(x)
 
     def pop(self) -> int:
-        if(self.d!=[]):
-            k=self.d[0]
-            self.d.remove(self.d[0])
-            return k
+        k=self.d[0]
+        self.d.pop(0)
+        return k
 
 
     def peek(self) -> int:
