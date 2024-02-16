@@ -13,13 +13,13 @@ class Solution:
         while k>0:
             m=l[i]
             if(m==1):
-                l[i]=9999999999
+                l[i]=0
                 i+=1
             else:
                 l[i]=m-1
             k-=1
         # print(l)
         for i in range(len(l)):
-            if(l[i]!=9999999999):
+            if(l[i]!=0):
                 c+=1
         return c
