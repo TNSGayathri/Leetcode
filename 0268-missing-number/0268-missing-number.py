@@ -4,8 +4,8 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        nums.sort()
+        x=0
         for i in range(0,len(nums)):
-            if i!=nums[i]:
-                return i
-        return i+1
+            x=x^i+1
+            x=x^nums[i]
+        return x
