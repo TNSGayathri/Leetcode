@@ -3,17 +3,11 @@ class Solution:
         if len(trust)==0:
             if(n==1):return 1
             else:return -1
-        l=[]
-        l1=[]
-        m=[]
+        l=[0]*(n+1)
         for i in trust:
-            l.append(i[0])
-            l1.append(i[1])
-        for i in l1:
-            if i not in l:
-                m.append(i)
-        # print(l,m)
-        if(len(set(l))==len(m)):
-            return m[0]
+            l[i[0]]-=1
+            l[i[1]]+=1
+        for i in range(1,n+1):
+            if l[i]==n-1:
+                return i
         return -1
-        
