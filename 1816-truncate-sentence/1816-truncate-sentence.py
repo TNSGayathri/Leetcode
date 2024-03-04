@@ -1,15 +1,7 @@
 class Solution:
-    def truncateSentence(self, s: str, m: int) -> str:
-        k=""
-        c=0
-        for i in s:
-            if(c==m-1 and i==" "):
-                return k  
-            if(c<m):
-                k+=i
-            if i==" ":
-                c+=1
-            # print(k)
-            
-        return k
+    def truncateSentence(self, s: str, k: int) -> str:
+        sl=s.split(" ")
+        # print(sl)
+        sl=sl[:k:]
+        return " ".join(sl)
         
