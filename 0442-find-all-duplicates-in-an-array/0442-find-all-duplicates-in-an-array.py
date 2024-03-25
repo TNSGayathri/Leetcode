@@ -6,7 +6,6 @@ class Solution:
             if i not in d:
                 d[i]=1
             else:
-                d[i]+=1
                 if i not in l:
                     l.append(i)
         return l
