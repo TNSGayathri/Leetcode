@@ -1,25 +1,18 @@
 class Solution:
     def minRemoveToMakeValid(self, s: str) -> str:
         l=[]
-        m=[]
         k=""
         for i in range(len(s)):
-            m=[]
             if(s[i]=='('):
-                m.append(s[i])
-                m.append(i)
-                l.append(m)
+                l.append([s[i],i])
             elif(l and s[i]==')'):
                 if(l[-1][0]=='('):
                     l.pop()
                 else:
-                    m.append(s[i])
-                    m.append(i)
-                    l.append(m)
+                    l.append([s[i],i])
+
             elif(l==[] and s[i]==')'):
-                 m.append(s[i])
-                 m.append(i)
-                 l.append(m)
+                 l.append([s[i],i])
         m=[]
         for i in range(len(l)):
             m.append(l[i][1])
