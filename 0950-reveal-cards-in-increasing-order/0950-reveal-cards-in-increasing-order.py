@@ -16,9 +16,8 @@ class Solution:
             i+=1
             l.pop(0)
             if(len(l)>1):
-                a=l[0]
+                l.append(l[0])
                 l.pop(0)
-                l.append(a)
             # print(t,l)
         return t
             
