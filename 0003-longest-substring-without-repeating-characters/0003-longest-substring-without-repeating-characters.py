@@ -5,20 +5,17 @@ class Solution:
                 d={}
                 i=0
                 j=0
-                while i <n and j<n:
+                while j<n:
                     if nums[j] not in d:
-                        d[nums[j]]=1
-                        j+=1
-                    elif nums[j] in d and d[nums[j]]<1:
-                        d[nums[j]]+=1
-                        j+=1
-                    else:
-                        # print(j,i)
+                        d[nums[j]]=j
+                    elif nums[j] in d:
                         m=max(m,(j-i))
-                        d[nums[i]]-=1
-                        i+=1
-                # print(" ")
-                m=max(m,(j-i))
+                        i=max(i,d[nums[j]]+1)
+                        d[nums[j]]=j
+                    j+=1
+                if(m==0):
+                    return n
+                m=max(m,j-i)
                 return m
 
         
