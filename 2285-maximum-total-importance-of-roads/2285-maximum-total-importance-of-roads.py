@@ -10,12 +10,11 @@ class Solution:
                 d[i[1]]+=1
             elif i[1] not in d:
                 d[i[1]]=1
-        m = dict(sorted(d.items(), key=lambda item: item[1],reverse=True))
+        m=sorted(d.values())
+        m=m[::-1]
+        c=0
         k=n
         for i in m:
-            m[i]=k
+            c+=i*k
             k-=1
-        c=0
-        for i in roads:
-            c+=m[i[0]]+m[i[1]]
         return c
